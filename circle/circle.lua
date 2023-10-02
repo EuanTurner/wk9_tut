@@ -1,14 +1,15 @@
-c = Vector3:new{x=0.1, y=0.1}
+c = Vector3:new{x=0.5, y=0.5}
 
-radius = 0.05
-northPoint = Vector3:new{x=c.x,         y=c.y+radius}
-southPoint = Vector3:new{x=c.x,         y=c.y-radius}
+radius = 0.5
+
 westPoint  = Vector3:new{x=c.x-radius,  y=c.y}
+northPoint = Vector3:new{x=c.x,         y=c.y+radius}
 eastPoint  = Vector3:new{x=c.x+radius,  y=c.y}
+southPoint = Vector3:new{x=c.x,         y=c.y-radius}
 
-arc1 = Arc:new{p0=northPoint,   p1=westPoint,   centre=c}
+arc1 = Arc:new{p0=westPoint,   p1=northPoint,   centre=c}
 arc2 = Arc:new{p0=southPoint,   p1=eastPoint,   centre=c}
-arc3 = Arc:new{p0=westPoint,    p1=southPoint,  centre=c}
+arc3 = Arc:new{p0=southPoint,    p1=westPoint,  centre=c}
 arc4 = Arc:new{p0=eastPoint,    p1=northPoint,  centre=c}
 
 -- circle = Polyline:new{segments={arc1, arc2, arc3, arc4}}
